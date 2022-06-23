@@ -2,8 +2,10 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.commonutils.ResultCode;
 import com.atguigu.eduservice.entity.EduTeacher;
 import com.atguigu.eduservice.service.EduTeacherService;
+import com.atguigu.servicebase.config.exceptionhandler.GuliException;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -43,7 +45,12 @@ public class EduTeacherController {
     @ApiOperation(value = "逻辑删除讲师")
     @DeleteMapping("/{id}")
     public R deleteTeacherById(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable("id") String id){
-        int a=10/0;
+//        自定义异常
+//        try {
+//            int a=10/0;
+//        }catch (Exception e){
+//            throw new GuliException(ResultCode.ERROR,"执行自定义异常");
+//        }
         eduTeacherService.removeById(id);
         return R.ok();
     }

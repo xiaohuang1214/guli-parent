@@ -1,8 +1,8 @@
 server:
   port: 8001
 mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #configuration:
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:com/atguigu/eduservice/*/mapper/*.xml
   global-config:
     db-config:
@@ -27,3 +27,6 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+
+#设置日志级别
+
